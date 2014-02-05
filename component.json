@@ -1,0 +1,11 @@
+{
+  "name": "to-coordinates",
+  "repo": "eivindfjeldstad/to-coordinates",
+  "description": "parse coordinates from a string",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "to-coordinates",
+  "version": "0.0.1",
+  "description": "parse coordinates from a string",
+  "scripts": {
+    "test": "make test"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/eivindfjeldstad/to-coordinates"
+  },
+  "license": "MIT"
+}
