@@ -1,7 +1,7 @@
 {
   "name": "to-coordinates",
   "version": "0.0.1",
-  "description": "parse coordinates from a string",
+  "description": "parse coordinate strings",
   "scripts": {
     "test": "make test"
   },

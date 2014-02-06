@@ -1,5 +1,5 @@
 #to-coordinates
-Parse coordinates from a string.
+Parse coordinate strings.
 
 ##Example
 ```js
