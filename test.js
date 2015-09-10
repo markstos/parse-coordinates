@@ -2,19 +2,38 @@ var assert = require('assert');
 var geo = require('./');
 
 describe('to-coordinates', function () {
-  it('should return an array of coordinates', function () {
+  it('should parse a coordinate pair seperated by a comma and space', function () {
     var latLng = geo('-100.21, 21.32');
     assert(latLng.length == 2);
     assert(latLng[0] === -100.21);
     assert(latLng[1] === 21.32);
   })
-  
-  describe('when given invalid coordinates', function () {
-    it('should return an empty array', function () {
-      var latLng = geo('abc, def');
-      assert(latLng.length == 0);
-    })
+
+  it('should tolerate space on the outside of the numbers', function () {
+    var latLng = geo(' -100.21, 21.32 ');
+    assert(latLng.length == 2);
+    assert(latLng[0] === -100.21);
+    assert(latLng[1] === 21.32);
   })
+  
+  it('should return an empty array when given "abc, def"', function () {
+   var latLng = geo('abc, def');
+   assert(latLng.length == 0);
+  })
+ 
+  it("should return empty array when given 'BOOM'", function () {
+   assert(geo("BOOM"),[]);
+  })
+  it("should return empty array when given null", function () {
+   assert(geo(null),[]);
+  });
+  it("should return empty array when given undefined", function () {
+    assert(geo(undefined),[]);
+  });
+  it("should return empty array when given  empty string", function () {
+    assert(geo(''),[]);
+  });
+
   
   describe('.box()', function () {
     it('should return an array of boundries', function () {
