@@ -1,7 +1,7 @@
 var assert = require('assert');
 var geo = require('./');
 
-describe('toLatLng()', function () {
+describe('to-coordinates', function () {
   it('should return an array of coordinates', function () {
     var latLng = geo('-100.21, 21.32');
     assert(latLng.length == 2);
