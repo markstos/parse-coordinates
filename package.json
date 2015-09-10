@@ -1,6 +1,6 @@
 {
   "name": "to-coordinates",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "parse coordinate strings",
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec --bail"
@@ -8,9 +8,12 @@
   "devDependencies": {
     "mocha": "*"
   },
+  "homepage": "https://github.com/eivindfjeldstad/to-coordinates",
   "repository": {
     "type": "git",
     "url": "git://github.com/eivindfjeldstad/to-coordinates"
   },
+  "author" : "Eivind Fjeldstad <eivind.fjeldstad@gmail.com>",
+  "contributors": [ "Mark Stosberg <mark@rideamigos.com>" ],
   "license": "MIT"
 }
