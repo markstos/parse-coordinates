@@ -15,6 +15,13 @@ describe('to-coordinates', function () {
     assert(latLng[0] === -100.21);
     assert(latLng[1] === 21.32);
   })
+
+  it('should tolerate no space between numbers', function () {
+    var latLng = geo(' -100.21,21.32 ');
+    assert(latLng.length == 2);
+    assert(latLng[0] === -100.21);
+    assert(latLng[1] === 21.32);
+  })
   
   it('should return an empty array when given "abc, def"', function () {
    var latLng = geo('abc, def');
