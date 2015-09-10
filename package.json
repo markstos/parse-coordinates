@@ -1,5 +1,6 @@
 {
   "name": "to-coordinates",
+  "keywords" : ["parsing","parse","array","parser","coordinates","latitude","longitude"],
   "version": "0.1.0",
   "description": "parse coordinate strings",
   "scripts": {
