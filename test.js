@@ -22,6 +22,13 @@ describe('to-coordinates', function () {
     assert(latLng[0] === -100.21);
     assert(latLng[1] === 21.32);
   })
+
+  it('should parse 3 numbers', function () {
+    var latLng = geo('1,2,3');
+    assert(latLng[0] === 1);
+    assert(latLng[1] === 2);
+    assert(latLng[2] === 3);
+  })
   
   it('should return an empty array when given "abc, def"', function () {
    var latLng = geo('abc, def');
