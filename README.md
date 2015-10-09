@@ -7,15 +7,15 @@ Parse coordinate strings.
 ```javascript
 var latLng = require('parse-coordinates');
 
-var coords = latLng('-100.21, 21.32');
-// => [-100.21, 21.32]
+var coords = latLng('-80.21, 21.32');
+// => [-80.21, 21.32]
 ```
 
 ## Description
 
 ```javascript
-  var coords = latLng('-100.21, 21.32');
-  // => [-100.21, 21.32]
+  var coords = latLng('-80.21, 21.32');
+  // => [-80.21, 21.32]
 ```
 
 The function returned parses a comma separated latitude and longitude pair and returns them as an array.
@@ -29,7 +29,7 @@ If the parsing fails for any reason, null is returned instead of the array.
 
 ## Author
 
- Mark Stosberg \<mark@rideamigos.com`>
+ Mark Stosberg \<mark@rideamigos.com>
 
 ## Credit
 
