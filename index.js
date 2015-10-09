@@ -1,7 +1,7 @@
 module.exports = toLatLng;
 
 /**
- * Parse latLng coordinates
+ * Parse a string containing a latitude, longitude pair and return them as an array.
  *
  * @param {String} Str
  * @return {Array}
@@ -9,35 +9,27 @@ module.exports = toLatLng;
  */
 
 function toLatLng (str) {
-  var reg = /(-?[0-9]+\.?[0-9]*)/g;
-  var ret = [];
-  var match;
-  
-  while (match = reg.exec(str)) {
-    var coord = parseFloat(match[1]);
-    ret.push(coord);
+  var match = /^\s*?(-?[0-9]+\.?[0-9]+?)\s*,\s*(-?[0-9]+\.?[0-9]+?)\s*$/.exec(str);
+
+//  console.log("FOUND MATCH %j",match);
+
+  if (match && match.length === 3) {
+    var lat = parseFloat(match[1]);
+    var lng = parseFloat(match[2]);
+
+    if (  (lat >= -90)
+       && (lat <= 90)
+       && (lng >= -180)
+       && (lng <= 180)
+      ) {
+      return [lat, lng];
+    }
+    else {
+ //     console.log("Numbers failed validation");
+      return null;
+    }
   }
-  
-  return ret;
+
+// console.log("Didn't find exactly 2 numbers in input %s %j",str,match);
+ return null;
 }
-
-/**
- * Parse bounding box
- *
- * @param {String} box
- * @return {Array}
- * @api public
- */
-
-toLatLng.box = function (box) {
-  var reg = /(-?[0-9]+\.?[0-9]*,\s?-?[0-9]+\.?[0-9]*)/g;
-  var ret = [];
-  var match;
-  
-  while (match = reg.exec(box)) {
-    var boundry = toLatLng(match[1]);
-    ret.push(boundry);
-  }
-  
-  return ret;
-};

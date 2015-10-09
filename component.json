@@ -1,8 +1,8 @@
 {
-  "name": "to-coordinates",
-  "repo": "eivindfjeldstad/to-coordinates",
+  "name": "parse-coordinates",
+  "repo": "markstos/parse-coordinates",
   "description": "parse coordinate strings",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "license": "MIT",
   "main": "index.js",
   "scripts": [

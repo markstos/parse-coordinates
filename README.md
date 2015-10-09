@@ -1,53 +1,42 @@
-#to-coordinates
+# parse-coordinates
 
 Parse coordinate strings.
 
 ##Synopsis
 
-```js
-var latLng = require('to-coordinates');
+```javascript
+var latLng = require('parse-coordinates');
 
 var coords = latLng('-100.21, 21.32');
 // => [-100.21, 21.32]
-
-var box = latLng.box('(-100.21, 21.32), (88.31, -32.11)');
-// => [[-100.21, 21.32], [88.31, -32.11]]
 ```
 
-##Description
-
-## main function
+## Description
 
 ```javascript
   var coords = latLng('-100.21, 21.32');
   // => [-100.21, 21.32]
 ```
 
-The function returned parses one or numbers out of a string and returns the numbers in an array in the same order.
+The function returned parses a comma separated latitude and longitude pair and returns them as an array.
 
-Any non-numbers or separator between the numbers are tolerated. If no numbers
-are found in the input for any reason, then an empty array is returned.
+Latitude is validated to range from -90 to 90.  Longitude value is validated to range from
+-180 to 180.
 
-Finding a single number or more than two numbers is considered valid and will be returned in the array accordingly.
+Leading and trailing space are tolerated in the string, as well as around the comma.
 
-## box
+If the parsing fails for any reason, null is returned instead of the array.
 
-```javascript
-    var box = latLng.box('(-100.21, 21.32), (88.31, -32.11)');
-    // => [[-100.21, 21.32], [88.31, -32.11]]
-```
+## Author
 
-The box function looks for comma separated numbers contained in parens. Each
-time one is found, the main coordinate parsing function is applied. The result is an array of nested arrays containing
-coordinates.
+ Mark Stosberg \<mark@rideamigos.com`>
 
-##Author
+## Credit
 
-  Eivind Fjeldstad \<eivind.fjeldstad@gmail.com\>
+ Forked from
+ [to-coordinates](https://github.com/eivindfjeldstad/to-coordinates), which
+ lacked validation of the number coordinates as well as the valid lat/lng value ranges.
 
-##Contributors
+## Licence
 
-  Mark Stosberg \<mark@rideamigos.com`>
-
-##Licence
-MIT
+ MIT
