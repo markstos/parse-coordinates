@@ -2,7 +2,7 @@
 
 Parse coordinate strings.
 
-##Synopsis
+## Synopsis
 
 ```javascript
 var latLng = require('parse-coordinates');
