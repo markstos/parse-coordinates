@@ -32,7 +32,7 @@ If the parsing fails for any reason, null is returned instead of the array.
 ```javascript
   var LatLng = require('parse-coordinates');
   
-  var coords = '-80.21, 21.32;
+  var coords = '-80.21, 21.32';
   
   if (LatLon(coords)) {
     // do something when coordinates are valid
