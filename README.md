@@ -27,6 +27,21 @@ Leading and trailing space are tolerated in the string, as well as around the co
 
 If the parsing fails for any reason, null is returned instead of the array.
 
+**Lets try an example, check if coordinates are valid**
+
+```javascript
+  var LatLng = require('parse-coordinates');
+  
+  var coords = '-80.21, 21.32';
+  
+  if (LatLon(coords)) {
+    // do something when coordinates are valid
+  } else {
+    //do something when coordinates are invalid
+  }
+  
+```
+
 ## Author
 
  Mark Stosberg \<mark@rideamigos.com>
