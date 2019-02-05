@@ -11,8 +11,6 @@ module.exports = toLatLng;
 function toLatLng (str) {
   var match = /^\s*?(-?[0-9]+\.?[0-9]+?)\s*,\s*(-?[0-9]+\.?[0-9]+?)\s*$/.exec(str);
 
-//  console.log("FOUND MATCH %j",match);
-
   if (match && match.length === 3) {
     var lat = parseFloat(match[1]);
     var lng = parseFloat(match[2]);
@@ -25,11 +23,9 @@ function toLatLng (str) {
       return [lat, lng];
     }
     else {
- //     console.log("Numbers failed validation");
       return null;
     }
   }
 
-// console.log("Didn't find exactly 2 numbers in input %s %j",str,match);
  return null;
 }
